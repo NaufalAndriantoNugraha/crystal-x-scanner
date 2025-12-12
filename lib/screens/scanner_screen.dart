@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:scan_qr_member/components/scanner_corners_painter.dart';
 
 class ScannerScreen extends StatefulWidget {
   static const String routeName = '/scanner_screen';
@@ -59,7 +60,19 @@ class _ScannerScreenState extends State<ScannerScreen> {
           ),
         ],
       ),
-      body: MobileScanner(controller: mobileScannerController),
+      body: Stack(
+        children: [
+          MobileScanner(controller: mobileScannerController),
+          Center(
+            child: Container(
+              width: 320,
+              height: 250,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+              child: CustomPaint(painter: ScannerCornersPainter()),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
