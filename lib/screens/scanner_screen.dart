@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScannerScreen extends StatefulWidget {
   static const String routeName = '/scanner_screen';
@@ -10,6 +11,12 @@ class ScannerScreen extends StatefulWidget {
 }
 
 class _ScannerScreenState extends State<ScannerScreen> {
+  MobileScannerController mobileScannerController = MobileScannerController(
+    torchEnabled: false,
+  );
+
+  bool isFlashOn = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +29,14 @@ class _ScannerScreenState extends State<ScannerScreen> {
         automaticallyImplyLeading: false,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () async {
+              await mobileScannerController.toggleTorch();
+              setState(() {
+                isFlashOn = !isFlashOn;
+              });
+            },
             child: Text(
-              'FLASH ON',
+              'FLASH ${isFlashOn ? 'OFF' : 'ON'}',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -33,7 +45,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: Text(
               'CANCEL',
               style: TextStyle(
@@ -45,6 +59,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
           ),
         ],
       ),
+      body: MobileScanner(controller: mobileScannerController),
     );
   }
 }
