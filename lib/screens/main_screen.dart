@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scan_qr_member/screens/scanner_screen.dart';
 
 class MainScreen extends StatefulWidget {
   static const String routeName = '/main_screen';
@@ -30,7 +31,9 @@ class _MainScreenState extends State<MainScreen> {
             SizedBox(
               width: 325,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ScannerScreen.routeName);
+                },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(vertical: 15),
                   shape: RoundedRectangleBorder(

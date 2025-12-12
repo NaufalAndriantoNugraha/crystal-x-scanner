@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scan_qr_member/screens/main_screen.dart';
+import 'package:scan_qr_member/screens/scanner_screen.dart';
 import 'package:scan_qr_member/styles/custom_theme.dart';
 
 void main() {
@@ -16,7 +17,10 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: CustomTheme.theme,
       initialRoute: MainScreen.routeName,
-      routes: {MainScreen.routeName: (context) => MainScreen()},
+      routes: {
+        MainScreen.routeName: (context) => MainScreen(),
+        ScannerScreen.routeName: (context) => ScannerScreen(),
+      },
     );
   }
 }
