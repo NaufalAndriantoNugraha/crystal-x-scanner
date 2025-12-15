@@ -6,19 +6,17 @@
 
 <br>
 
-# Crystall-X Scanner
 
 Crystall-X Scanner merupakan proyek aplikasi mobile yang dibuat untuk memenuhi kebutuhan klien perusahaan CV Fiesto Informatika. Fitur pada aplikasi ini adalah melakukan scan pada barcode dan mengirimkan product id, longtitude, serta latitude ke url yang telah ditentukan. 
 
-## Cara memulai proyek 
 
-### Persyaratan
+## Persyaratan
 
 * Flutter
 * IDE/Text editor
 * Android emulator
 
-### Mengunduh dan Menjalankan Proyek
+## Mengunduh dan Menjalankan Proyek
 
 1. **Duplikat Repositori**
     ```bash
