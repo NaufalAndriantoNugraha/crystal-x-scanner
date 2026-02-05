@@ -22,9 +22,6 @@ class _ScannerScreenState extends State<ScannerScreen> {
   @override
   void initState() {
     super.initState();
-    // Future.delayed(Duration(milliseconds: 300), () {
-    //   _scanQRCode();
-    // });
     _scanQRCode();
   }
 
@@ -107,29 +104,6 @@ class _ScannerScreenState extends State<ScannerScreen> {
     }
   }
 
-  // void _showDialog(String title, String description, DialogType type) {
-  //   AwesomeDialog(
-  //     context: context,
-  //     animType: AnimType.leftSlide,
-  //     headerAnimationLoop: false,
-  //     dialogType: type,
-  //     showCloseIcon: true,
-  //     title: title,
-  //     dismissOnTouchOutside: false,
-  //     desc: description,
-  //     btnOkOnPress: () {
-  //       _scanQRCode();
-  //     },
-  //     btnCancelOnPress: () {
-  //       Navigator.of(context).pop();
-  //     },
-  //     btnOkText: "OK",
-  //     btnCancelText: "Cancel",
-  //     btnOkIcon: Icons.check_circle,
-  //     btnCancelIcon: Icons.cancel,
-  //   ).show();
-  // }
-
   void _showDialog(String title, String description, DialogType type) {
     showDialog(
       context: context,
@@ -170,58 +144,6 @@ class _ScannerScreenState extends State<ScannerScreen> {
       locationSettings: LocationSettings(accuracy: LocationAccuracy.high),
     );
   }
-
-  // void _showDialogFormat(
-  //   String title,
-  //   String productName,
-  //   String serialNumber,
-  //   DateTime packagingDate,
-  //   DateTime activePeriod,
-  //   String textScan,
-  //   DialogType type,
-  // ) {
-  //   String formattedPackagingDate = DateFormat(
-  //     'yyyy-M-d',
-  //   ).format(packagingDate);
-  //   String formattedActivePeriod = DateFormat('yyyy-M-d').format(activePeriod);
-
-  //   AwesomeDialog(
-  //     context: context,
-  //     animType: AnimType.leftSlide,
-  //     headerAnimationLoop: false,
-  //     dialogType: type,
-  //     showCloseIcon: true,
-  //     title: title,
-  //     dismissOnTouchOutside: false,
-  //     body: Column(
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         Text('Nama Produk: $productName', textAlign: TextAlign.start),
-  //         Text('Nomor Seri: $serialNumber', textAlign: TextAlign.start),
-  //         Text(
-  //           'Tanggal Pengemasan: $formattedPackagingDate',
-  //           textAlign: TextAlign.start,
-  //         ),
-  //         Text(
-  //           'Masa Berlaku: $formattedActivePeriod',
-  //           textAlign: TextAlign.start,
-  //         ),
-  //         const SizedBox(height: 16),
-  //         Text('Scan: $textScan', textAlign: TextAlign.start),
-  //       ],
-  //     ),
-  //     btnOkOnPress: () {
-  //       _scanQRCode();
-  //     },
-  //     btnCancelOnPress: () {
-  //       Navigator.of(context).pop();
-  //     },
-  //     btnOkText: "OK",
-  //     btnCancelText: "Cancel",
-  //     btnOkIcon: Icons.check_circle,
-  //     btnCancelIcon: Icons.cancel,
-  //   ).show();
-  // }
 
   void _showDialogFormat(
     String title,

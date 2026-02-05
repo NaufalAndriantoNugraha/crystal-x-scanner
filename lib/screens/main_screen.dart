@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          'Crystal-X Scanner',
+          'CRYSTAL-X QR Scanner',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
